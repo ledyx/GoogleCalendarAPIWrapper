@@ -1,7 +1,7 @@
-# GoogleCalendarExample
+# GoogleCalendarAPIWrapper
 Google Calendar API Wrapper (For Android)
 
-![](https://github.com/xeyez/GoogleCalendarExample/blob/master/screenshot.jpg)
+![](https://github.com/xeyez/GoogleCalendarAPIWrapper/blob/master/screenshot.jpg)
 
 # Environment
 - [AndridAnnotations](http://androidannotations.org/)
