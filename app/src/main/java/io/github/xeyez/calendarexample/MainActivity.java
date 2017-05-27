@@ -76,18 +76,22 @@ public class MainActivity extends GoogleCalendarActivity implements GoogleCalend
             case R.id.btn_calendar_add:
                 observer.addCalendar(calendarSummaryText).subscribe(calendar -> {
                     tv_output.setText(calendar.getId() + " added!!");
+                    et_calendarId.setText(calendar.getId());
                 }, throwable -> handleCommonThrowable(throwable));
                 break;
 
             case R.id.btn_calendar_update:
                 observer.updateCalendar(calendarIdText, calendarSummaryText).subscribe(calendar -> {
                     tv_output.setText(calendar.getId() + " updated!!");
+                    et_calendarId.setText(calendar.getId());
                 }, throwable -> handleCommonThrowable(throwable));
                 break;
 
             case R.id.btn_calendar_delete:
-                observer.deleteCalendar(calendarIdText).subscribe(aVoid -> {
-                    tv_output.setText(calendarIdText + " deleted!!");
+                observer.deleteCalendar(calendarIdText).subscribe(calenderID -> {
+                    tv_output.setText(calenderID + " deleted!!");
+                    et_calendarId.setText("");
+                    et_eventId.setText("");
                 }, throwable -> handleCommonThrowable(throwable));
                 break;
 
@@ -125,18 +129,21 @@ public class MainActivity extends GoogleCalendarActivity implements GoogleCalend
             case R.id.btn_event_add:
                 observer.addEvent(calendarIdText, eventSummaryText, eventSummaryText + " DESCRIPTION").subscribe(event -> {
                     tv_output.setText(event.getId() + " added!!");
+                    et_eventId.setText(event.getId());
                 }, throwable -> handleCommonThrowable(throwable));
                 break;
 
             case R.id.btn_event_update:
                 observer.updateEvent(calendarIdText, eventIdText, eventSummaryText, eventSummaryText + " DESCRIPTION").subscribe(event -> {
                     tv_output.setText(event.getId() + " updated!!");
+                    et_eventId.setText(event.getId());
                 }, throwable -> handleCommonThrowable(throwable));
                 break;
 
             case R.id.btn_event_delete:
-                observer.deleteEvent(calendarIdText, eventIdText).subscribe(aVoid -> {
-                    tv_output.setText(calendarIdText + "." + "eventIdText" + " deleted!!");
+                observer.deleteEvent(calendarIdText, eventIdText).subscribe(eventID -> {
+                    tv_output.setText(calendarIdText + "." + eventID + " deleted!!");
+                    et_eventId.setText("");
                 }, throwable -> handleCommonThrowable(throwable));
                 break;
         }

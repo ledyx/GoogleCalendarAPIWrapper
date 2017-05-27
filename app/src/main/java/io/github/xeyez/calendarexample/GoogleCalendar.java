@@ -69,9 +69,10 @@ public class GoogleCalendar {
         }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread());
     }
 
-    public Observable<Void> deleteCalendar(String calendarId) {
-        return Observable.create((ObservableOnSubscribe<Void>) e -> {
-            e.onNext(mService.calendars().delete(calendarId).execute());
+    public Observable<String> deleteCalendar(String calendarId) {
+        return Observable.create((ObservableOnSubscribe<String>) e -> {
+            mService.calendars().delete(calendarId).execute();
+            e.onNext(calendarId);
             e.onComplete();
         }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread());
     }
@@ -141,9 +142,10 @@ public class GoogleCalendar {
         }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread());
     }
 
-    public Observable<Void> deleteEvent(String calendarId, String eventId) {
-        return Observable.create((ObservableOnSubscribe<Void>) e -> {
-            e.onNext(mService.events().delete(calendarId, eventId).execute());
+    public Observable<String> deleteEvent(String calendarId, String eventId) {
+        return Observable.create((ObservableOnSubscribe<String>) e -> {
+            mService.events().delete(calendarId, eventId).execute();
+            e.onNext(eventId);
             e.onComplete();
         }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread());
     }

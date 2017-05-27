@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:scrollHorizontally="false"
                 android:hint="Calendar ID"
                 android:layout_marginTop="10dp"/>
 
@@ -39,6 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:scrollHorizontally="false"
                 android:hint="Calendar summary"
                 android:layout_marginTop="10dp"/>
 
@@ -79,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:scrollHorizontally="false"
                 android:hint="Event ID"
                 android:layout_marginTop="10dp"/>
 
@@ -87,6 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:scrollHorizontally="false"
                 android:hint="Event Summary"
                 android:layout_marginTop="10dp"/>
 
